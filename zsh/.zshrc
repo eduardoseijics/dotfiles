@@ -127,4 +127,10 @@ function branch() {
   git branch --show-current
 }
 
-source "$HOME/dotfiles/zsh/shortcuts.zsh"
+# Load shortcuts next to the real .zshrc, following its symlink.
+source "${${(%):-%x}:A:h}/shortcuts.zsh"
+
+# Load optional settings specific to this machine.
+if [[ -f "$HOME/.zshrc.local" ]]; then
+  source "$HOME/.zshrc.local"
+fi

@@ -63,3 +63,4 @@ clear_scrollback() {
 
 zle -N clear_scrollback
 bindkey '^L' clear_scrollback
+alias ghwho='ssh -T git@github.com'
